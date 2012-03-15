@@ -1,0 +1,31 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+\title{}
+\author{}
+
+
+
+
+
+\begin{document}
+\section{Creación de un repositorio.}
+
+Al usar init se crea un subdirectorio, denominado .git, que contiene los archivos del repositorio. Mediante \texttt{add} se hace el \texttt{tracking} de los archivos que se incluiran en el commit
+
+
+
+
+
+
+\begin{verbatim}
+  $ git init
+  $ git add *.c
+  $ git add README
+  $ git commit -m 'initial project version'
+\end{verbatim}
+
+
+
+
+\end{document}

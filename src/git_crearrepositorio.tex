@@ -1,0 +1,39 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+\title{}
+\author{}
+
+
+
+
+
+\begin{document}
+\section{Creación de un repositorio.}
+
+Al usar init se crea un subdirectorio, denominado .git, que contiene los archivos del repositorio. Mediante \texttt{add} se hace el \texttt{tracking} de los archivos que se incluiran en el commit
+
+
+
+
+
+
+\begin{verbatim}
+  $ git init
+  $ git add *.c
+  $ git add README
+  $ git commit -m 'initial project version'
+\end{verbatim}
+
+Para hacer una copia de un repositorio ya existente
+
+\begin{verbatim}
+ $ git clone git://github.com/schacon/grit.git mygrit
+\end{verbatim}
+
+el último parámetro es optativo, indica el nombre del directorio que se creará. Si no se proporciona, se le asignará el nombre git
+
+La orden anterior crea un directorio llamado mygrit, inicializa un directorio .git dentro del él, vuelca todo los datos para este repositorio, y checkout una \texttt{working copy} de la última versión.
+
+
+\end{document}

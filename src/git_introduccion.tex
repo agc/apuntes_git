@@ -1,0 +1,29 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+\title{}
+\author{}
+
+
+
+
+
+\begin{document}
+\section{Introducción. Conceptos importantes.}
+
+Los archivos en Git se encuentran en  tres estados importantes: 
+\begin{itemize}
+	\item los archivos pueden estar \textit{commited} si están archivados en la base de datos
+	\item \textit{modificados} cuando han cambiado pero no han sido todavía commited
+	\item  \textit{staged}, cuando un archivo modificado ha sido señalado para ir en la siguiente instantanea commit
+\end{itemize}
+
+  
+
+
+El \textit{working directory} es un volcado \textit{checkout} de una versión del  proyecto: los archivos se extraen de la versión comprimida de la base de datos y se colocan en el disco para ser usados o modificados
+
+La \textit{staging area} es un archivo sencillo, contenido en el directorio git, que almacena información sobre lo que se incluirá en el próximo commit
+
+
+\end{document}

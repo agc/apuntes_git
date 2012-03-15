@@ -1,0 +1,23 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+\title{}
+\author{}
+
+
+
+
+
+\begin{document}
+\section{Configuración.}
+
+\begin{verbatim}
+  git config --global user.name "John Doe"
+  git config --global user.email johndoe@example.com
+  git config --global core.editor emacs
+  git config --global merge.tool vimdiff
+\end{verbatim}
+
+Se puede chequear los settings mediante \verb= git config --list=
+
+\end{document}

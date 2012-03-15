@@ -1,0 +1,50 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+%opening
+% rubber: set program xelatex
+% rubber: --clean 
+% rubber: --into ../
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Notas sobre como utilizar gedit en la edición de los documentos que componen estos apuntes
+\end{abstract}
+
+\section{Introducción}
+Se han instalado los plugins de gedit, en particular, 
+
+\begin{verbatim}
+sudo yum install gedit-plugins
+ sudo yum install gedit-latex
+\end{verbatim}
+ 
+
+
+La compilación en el plugin gedit se lleva a cabo con rubber. Se ha añadido, en el fichero de texto, el comentario \verb= %rubber: set program xelatex= para que se use xelatex. 
+
+Para que la salida de la compilación vaya al directorio superior he sustituido
+
+\verb= rubber --inplace --maxerr -1 --short --force --warn all --pdf "$filename" %
+
+por 
+
+\begin{verbatim}
+ xelatex -output-directory=../ -interaction=nonstopmode "$filename"
+\end{verbatim}
+
+
+La compilación con \verb=Ctrl+Alt+1= es muy rápida. Para abrir el fichero pdf automáticamente se incluye
+
+\begin{verbatim}
+
+gnome-open "$directory/pdf/$shortname.pdf"
+
+\end{verbatim}
+
+pero no funciona(pdf es un enlace simbólico al directorio superior)
+\end{document}

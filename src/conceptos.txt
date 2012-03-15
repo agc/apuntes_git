@@ -1,0 +1,7 @@
+Conceptos básicos
+
+
+
+Gits maneja instantáneas completas de todos los ficheros, no los cambios ocurridos en un fichero individual. Git archivo una referencia a esta instantáneas. Los archivos que no han cambiado no se vuelven a archivar de nuevo, sino que se almacena un enlace al archivo idéntico anterior ya guardado.
+
+
