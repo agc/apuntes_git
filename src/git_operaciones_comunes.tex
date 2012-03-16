@@ -1,0 +1,85 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+\title{}
+\author{}
+
+
+
+
+
+\begin{document}
+\section*{Operaciones comunes.}
+\begin{verbatim}
+$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	README
+nothing added to commit but untracked files present (use "git add" to track)
+\end{verbatim}
+
+para añadir al índice un archivo, marcándolo para que forme parte del próximo \texttt{commit (tracking)
+}
+\begin{verbatim}
+git add README
+\end{verbatim}
+
+Si un archivo que ha sido previamente añadido a la\textit{staging area} es modificado debe ejecutarse el comando \verb= git add <archivo>= de nuevo para \textit{stage} la nueva versión del archivo 
+
+\subsection*{Ejemplo de archivo .gitignore}
+\begin{verbatim}
+# a comment - this is ignored
+*.a       # no .a files
+!lib.a    # but do track lib.a, even though you're ignoring .a files above
+/TODO     # only ignore the root TODO file, not subdir/TODO
+build/    # ignore all files in the build/ directory
+doc/*.txt # ignore doc/notes.txt, but not doc/server/arch.txt
+\end{verbatim}
+
+vemos el uso de carácteres comodin, los comentarios y el uso de ! para la negación
+
+\subsection*{diff}
+
+\verb= git diff= muestra las diferencias entre lo que hay en el \texttt{working directory} y lo que hay en el \texttt{staging area}. Por otra parte \texttt{git diff --cached} muestra lo que está \textit{staged}, lo que irá en el próximo \textit{commit} 
+
+\section*{"Commiting" los cambios}
+
+
+\verb=git commit -m "Story 182: Fix benchmarks for speed"=
+
+Para evitar añadir previamente a \textit{stage area} los archivos \textbf{modificados} que ya se habían añadido previamente  se usa la opción \texttt{-a} 
+
+\verb= git commit -a -m 'added new benchmarks' =
+
+\subsection*{Eliminar archivos}
+
+Si se borra un archivo \verb= rm leeme.txt = cuando se invoca \verb= git status = se mostrará como modificado pero no \textit{staged} Para que git se olvide del archivo y deje de seguirle la pista, se usa el comando \texttt{rm} \verb= git rm leeme.txt = 
+
+Se puede usar sólamente el segundo comando, sin borrar previamente el archivo: git lo eliminará de la \textit{working area}
+
+Se puede renombrar un archivo mediante \verb= git mv file_from file_to =
+
+Para borrar un archivo del repositorio, pero no del sistema de ficheros \verb= git rm --cached mylogfile.log =
+
+\section{Revisando el historial de commits}
+
+\verb= git log -p -2 = muestra las diferencias introducidas en cada commit. \texttt{-2} se usa para limitar la salida a dos lineas
+
+\verb= git log --stat = muestra algunas estadísticas abreivada para cada commit. Otra opción interesante es \texttt{--pretty}
+
+Otra opción interesante es \texttt{format} (ver pág 29 de Pro git)
+
+Para limitar el número de salidas \verb+ git log --since=2.weeks + Otras opciones
+
+\begin{tabular}{ll}
+	\textbf{Opción} & \textbf{Descripción}\\
+	-(n) & Muestra sólo los n últimos commits\\
+	--since, --after & Muestra sólo los hechos después de una fecha\\
+	--until, --before & los hechos después de una fecha\\
+	-- author & los hechos por el autor\\
+	-- committer & los hechos por el committer\\
+\end{tabular}
+
+\end{document}
