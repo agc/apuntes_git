@@ -1,0 +1,37 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+
+
+\begin{document}
+
+
+
+
+
+
+\section{Tagging}
+
+Para crear un tagg anotado, un tag ligero, hacer un listado de los tags, ver información de lose existentes, 
+\begin{verbatim}
+ git tag -a v1.4 -m 'my version 1.4'
+ git tag
+ git show v1.4
+\end{verbatim}
+
+Para crear un tag ligero se usa el comando \verb= git tag v1.4-lw = ; se observa que no se ha incluido ninguna opción \verb= -a -n =
+
+Para hacer tag a un \texttt{commit} anterior se usa \verb= git tag -a v1.2 9fceb02 = donde las cifras hexadecimales son el comienzo del commit checksum ( se puede obtener con \verb= git log --pretty=oneline =)
+
+Para transferir los tags al repositorio remoto ( no se transfieren automáticamente cuando se hace push) se pueden usar los comandos
+
+\begin{verbatim}
+git push origin v1.5
+git push origin --tags
+\end{verbatim}
+
+el primero manda el tag identificado por su etiqueta, y el segundo todos los tags que no se hayan transferido hasta el momento
+
+Entonces, cuando se hace \texttt{clone} o \texttt{pull} desde el repositorio remoto se obtienen todos los tags, junto con el resto de objetos
+
+\end{document}

@@ -1,0 +1,40 @@
+\documentclass[]{article}
+\usepackage{fontspec}
+
+
+
+\begin{document}
+
+
+
+
+
+
+\section{Tagging}
+Los comandos para ver los repositorios remotos, ver la dirección completa, añadir nuevos repositorios, descargar una rama remota, sin hacer \textit{merge} con la rama master local, 
+\begin{verbatim}
+git remote 
+git remote -v
+git remote add pb git://github.com/paulboone/ticgit.git
+git fetch pb
+\end{verbatim}
+
+\verb= $ git fetch [remote-name] =
+
+El comando trae todos los datos del repositorio remoto . Se dispone de referencias a todas las ramas del repositorio, que se pueden mezclar o inspeccionar en cualquier momento.
+
+Si se hace un \texttt{clone} de un repositorio remoto se añade automáticamente este repositorio con el nombre \textit{origin} Entonces \verb= git fetch origin = \textit{pulls } los datos pero no los mezcla en el repositorio local y no modifica la \texttt{working copy} Se debe hacer \texttt{merge} manualmente
+
+Esta rama no aparece cuando \verb= git branch = pero se puede hacer \texttt{checkout} a ella \verb= git checkout origin/master =
+
+Si se desea obtener información, cambiar el nombre de la referencia al repositorio remoto o borrar dicha referencia se usan los comandos
+
+\begin{verbatim}
+git remote show origin
+
+git remote rename pb paul
+git remote rm pb
+
+\end{verbatim}
+
+\end{document}
