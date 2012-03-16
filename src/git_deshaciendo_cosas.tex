@@ -14,10 +14,17 @@
 
 \begin{verbatim}
 git commit -m "Inicial"
-git add fichero_olvidado
+git add fichero_a_incluir
 git commit --amend
 \end{verbatim}
 
-añade el archivo al commit anterior
+añade el archivo al commit anterior. Si no se especifica la opción \texttt{-m} se puede cambiar el mensaje del commit anterior, además de añadir los archivos
 
+\subsection*{Eliminar archivo de la stagged area}
+
+\verb= git reset HEAD <fichero> =
+
+el archivo no se modifica, pero queda eliminado del \textit{índice} de archivos que la próxima instantánea
+
+\verb= git checkout --<fichero> = deshace los cambios hechos en el fichero que queda sustituido por la versión existente en el \texttt{stagging area}
 \end{document}
